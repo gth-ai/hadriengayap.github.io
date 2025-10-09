@@ -21,7 +21,7 @@ const publications = [
         title: 'SALM: A Unified Model for 2D and 3D Region of Interest Segmentation in Lung CT Scans Using Vision Transformers',
         authors: ['Gayap, Hadrien T.', 'Moulay A. Akhloufi'],
         venue: 'Applied Bio sciences. MDPI',
-        link: '#'
+        link: null
     },
     {
         id: 3,
@@ -41,17 +41,17 @@ const publications = [
         title: 'Deep Machine Learning for Medical Diagnosis, Application to Lung Cancer Detection: A Review',
         authors: ['Gayap, Hadrien T.', 'Moulay A. Akhloufi'],
         venue: 'BioMedInformatics 4.1 (2024): 236-284',
-        link: '#'
+        link: null
     },
     {
         id: 5,
         type: 'journal',
         year: 2025,
-        status: 'accepted',
+        status: 'published',
         title: 'Optimizing Deep Learning Models for Real-Time Seizure Detection based on Electroencephalogram',
         authors: ['Gayap, Hadrien T.', 'Moulay A. Akhloufi'],
         venue: '2025 6th International Conference on Bio-engineering for Smart Technologies (BioSMART). IEEE',
-        link: null
+        link: 'https://ieeexplore.ieee.org/abstract/document/11046100'
     },
     
     // Conferences
