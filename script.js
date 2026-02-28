@@ -392,7 +392,7 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 // Add fade-in class to relevant sections
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll(
-        '.about-content, .timeline-item, .experience-item, .leadership-card, .award-card, .contact-content'
+        '.section-title, .about-content, .timeline-item, .experience-item, .leadership-card, .award-card, .contact-content, .contact-details'
     );
     animatedElements.forEach(el => {
         el.classList.add('fade-in');

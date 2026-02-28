@@ -215,7 +215,9 @@ const translations = {
 
         // Footer
         "footer.copyright": "\u00a9 2026 Hadrien Gayap. All rights reserved.",
-        "footer.tagline": "Advancing Medical AI & Cancer Detection Research"
+        "footer.tagline": "Advancing Medical AI & Cancer Detection Research",
+        "footer.navTitle": "Navigation",
+        "footer.connectTitle": "Connect"
     },
 
     fr: {
@@ -430,7 +432,9 @@ const translations = {
 
         // Footer
         "footer.copyright": "\u00a9 2026 Hadrien Gayap. Tous droits r\u00e9serv\u00e9s.",
-        "footer.tagline": "Faire progresser l'IA m\u00e9dicale et la recherche sur la d\u00e9tection du cancer"
+        "footer.tagline": "Faire progresser l'IA m\u00e9dicale et la recherche sur la d\u00e9tection du cancer",
+        "footer.navTitle": "Navigation",
+        "footer.connectTitle": "Connexion"
     }
 };
 

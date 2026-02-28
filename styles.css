@@ -165,14 +165,16 @@ button {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: none;
     z-index: 1000;
-    transition: all var(--transition-base);
+    transition: background var(--transition-base), box-shadow var(--transition-base);
 }
 
 .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow-md);
 }
 
@@ -619,8 +621,13 @@ button {
 
 .publication-card:hover {
     border-color: var(--primary-color);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.publication-card:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .publication-header {
@@ -1045,7 +1052,18 @@ button {
    CONTACT SECTION
    ========================================== */
 .contact {
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
 }
 
 .contact-content {
@@ -1066,13 +1084,30 @@ button {
 
 .contact-item {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
+    align-items: flex-start;
     margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    background: white;
+    border-radius: var(--border-radius-md);
+    transition: var(--transition-base);
+    border: 1px solid transparent;
+}
+
+.contact-item:hover {
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .contact-item svg {
     flex-shrink: 0;
-    color: var(--primary-color);
+    color: white;
+    background: var(--primary-color);
+    padding: 0.5rem;
+    border-radius: var(--border-radius-sm);
+    width: 40px;
+    height: 40px;
+    box-sizing: content-box;
 }
 
 .contact-item strong {
@@ -1162,13 +1197,122 @@ button {
 .footer {
     background: var(--bg-dark);
     color: white;
-    text-align: center;
-    padding: 2rem;
+    padding: 3rem 2rem 2rem;
 }
 
-.footer p {
-    margin-bottom: 0.5rem;
-    opacity: 0.8;
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+.footer-brand p {
+    opacity: 0.7;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+}
+
+.footer-brand .nav-logo a {
+    font-size: 1.5rem;
+}
+
+.footer-nav h4,
+.footer-social h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9375rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover {
+    color: white;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-social-link:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin-bottom: 0.25rem;
+    opacity: 0.6;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        text-align: left;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+    .footer-social-links {
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+    .footer-social-link {
+        width: 34px;
+        height: 34px;
+    }
+    .footer-social-link svg {
+        width: 15px;
+        height: 15px;
+    }
+    .footer-nav ul {
+        gap: 0.25rem;
+    }
+    .footer-nav a {
+        font-size: 0.875rem;
+    }
 }
 
 /* ==========================================
@@ -1184,6 +1328,24 @@ button {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Section title animations */
+.section-title.fade-in {
+    transform: translateY(20px);
+}
+
+/* Staggered children animation */
+.fade-in-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-stagger.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+.fade-in-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.fade-in-stagger.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.fade-in-stagger.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.fade-in-stagger.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
 
 /* ==========================================
    RESPONSIVE DESIGN
