@@ -81,7 +81,11 @@ const translations = {
 
         // Experience
         "exp.title": "Professional Experience",
-        "exp.1.date": "May 2023 - Present",
+        "exp.0.date": "February 2026 - Present",
+        "exp.0.role": "AI Research Engineer",
+        "exp.0.org": "Lexa Intelligence (Frontier Security)",
+        "exp.0.b1": "R&D team member developing AI solutions for frontier security",
+        "exp.1.date": "May 2023 - February 2026",
         "exp.1.role": "AI & Computer Science Specialist",
         "exp.1.org": "Atlantic Institute for Cancer Research, Moncton, Canada",
         "exp.1.b1": "Lead Developer of LIMS for Pan-Atlantic TerryFox Cancer Project",
@@ -298,7 +302,11 @@ const translations = {
 
         // Experience
         "exp.title": "Exp\u00e9rience professionnelle",
-        "exp.1.date": "Mai 2023 - Pr\u00e9sent",
+        "exp.0.date": "F\u00e9vrier 2026 - Pr\u00e9sent",
+        "exp.0.role": "Ing\u00e9nieur de recherche en IA",
+        "exp.0.org": "Lexa Intelligence (S\u00e9curit\u00e9 fronti\u00e8re)",
+        "exp.0.b1": "Membre de l'\u00e9quipe R&D d\u00e9veloppant des solutions d'IA pour la s\u00e9curit\u00e9 fronti\u00e8re",
+        "exp.1.date": "Mai 2023 - F\u00e9vrier 2026",
         "exp.1.role": "Sp\u00e9cialiste en IA & Informatique",
         "exp.1.org": "Institut atlantique de recherche sur le cancer, Moncton, Canada",
         "exp.1.b1": "D\u00e9veloppeur principal du LIMS pour le projet pan-atlantique TerryFox sur le cancer",

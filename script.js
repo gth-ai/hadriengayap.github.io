@@ -558,7 +558,7 @@ contactForm.addEventListener('submit', (e) => {
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
     
-    const mailtoLink = `mailto:ehg5435@umoncton.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    const mailtoLink = `mailto:gthadrien111@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     
     window.location.href = mailtoLink;
     
@@ -617,5 +617,5 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 console.log('%c👋 Hello there!', 'font-size: 20px; font-weight: bold; color: #2563eb;');
 console.log('%cInterested in AI and Bioinformatics?', 'font-size: 14px; color: #10b981;');
-console.log('%cLet\'s connect: ehg5435@umoncton.ca', 'font-size: 14px; color: #6b7280;');
+console.log('%cLet\'s connect: gthadrien111@gmail.com', 'font-size: 14px; color: #6b7280;');
 
