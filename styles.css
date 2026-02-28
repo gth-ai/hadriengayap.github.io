@@ -1332,3 +1332,39 @@ button {
     }
 }
 
+/* ==========================================
+   LANGUAGE TOGGLE
+   ========================================== */
+.lang-toggle {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+    margin-left: 1rem;
+}
+
+.lang-toggle:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* Show FR label when page is in English, EN label when in French */
+.lang-label { display: none; }
+html[data-lang="en"] .lang-en { display: inline; }
+html[data-lang="fr"] .lang-fr { display: inline; }
+/* Fallback: if no data-lang yet, show FR (default is English) */
+html:not([data-lang]) .lang-en { display: inline; }
+
+@media (max-width: 768px) {
+    .lang-toggle {
+        margin: 1rem auto 0;
+        display: block;
+    }
+}
+

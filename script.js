@@ -6,11 +6,11 @@ const publications = [
     {
         id: 1,
         type: 'journal',
-        year: 2024,
-        status: 'review',
-        title: 'MGDB: A Novel bioinformatics quality control tool for clinical Next-Generation Sequencing',
-        authors: ['Gayap, Hadrien T.', 'Eric Allain', 'Nicolas Crapoulet', 'Phillippe Pierre'],
-        venue: 'Computers in Biology and Medicine. Science Nature',
+        year: 2026,
+        status: 'published',
+        title: 'MGDB: A Novel Bioinformatics Quality Control Tool for Clinical Next-Generation Sequencing',
+        authors: ['Gayap, Hadrien T.', 'Robichaud, Philippe-Pierre', 'Crapoulet, Nicolas', 'Allain, Eric P.'],
+        venue: 'Cancer Informatics, 25, 11769351251411074. SAGE Publications',
         link: null
     },
     {
@@ -26,11 +26,11 @@ const publications = [
     {
         id: 3,
         type: 'journal',
-        year: 2024,
-        status: 'review',
+        year: 2026,
+        status: 'published',
         title: 'Lung-Mamba: Lung nodule segmentation model optimized by Mamba\'s selective state spaces',
-        authors: ['Gayap, Hadrien T.', 'Moulay A. Akhloufi'],
-        venue: 'BioMedical Engineering Advances Elsevier',
+        authors: ['Gayap, Hadrien T.', 'Akhloufi, Moulay A.'],
+        venue: 'Biomedical Engineering Advances, 100214. Elsevier',
         link: null
     },
     {
@@ -155,6 +155,27 @@ const publications = [
         presentationType: 'Presentation'
     },
     
+    {
+        id: 27,
+        type: 'workshop',
+        year: 2025,
+        status: 'published',
+        title: 'L\'intelligence artificielle en santé : présentation des travaux de recherche',
+        authors: ['Gayap, H.'],
+        venue: 'École Nationale Supérieure Polytechnique de Yaoundé, Cameroun',
+        date: 'December 16, 2025'
+    },
+    {
+        id: 28,
+        type: 'workshop',
+        year: 2026,
+        status: 'published',
+        title: 'État de l\'art de l\'intelligence artificielle dans le domaine militaire',
+        authors: ['Gayap, H.'],
+        venue: 'Corps du Bataillon d\'Intervention Rapide (BIR), HELIOS, Cameroun',
+        date: 'January 7, 2026'
+    },
+
     // Workshops
     {
         id: 15,
@@ -431,7 +452,7 @@ function renderPublications(filteredPublications = publications) {
     if (filteredPublications.length === 0) {
         container.innerHTML = `
             <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
-                <p style="font-size: 1.125rem;">No publications found matching your criteria.</p>
+                <p style="font-size: 1.125rem;">${typeof t === 'function' ? t('research.noResults') : 'No publications found matching your criteria.'}</p>
             </div>
         `;
         return;
@@ -451,21 +472,24 @@ function renderPublications(filteredPublications = publications) {
             return author;
         }).join(', ');
 
+        const statusLabel = typeof t === 'function' ? t('research.status.' + pub.status) : (pub.status === 'review' ? 'In Review' : pub.status.charAt(0).toUpperCase() + pub.status.slice(1));
         const statusBadge = pub.status ? `
-            <span class="publication-status ${pub.status}">${pub.status === 'review' ? 'In Review' : pub.status.charAt(0).toUpperCase() + pub.status.slice(1)}</span>
+            <span class="publication-status ${pub.status}">${statusLabel}</span>
         ` : '';
 
         const linkHtml = pub.link ? `
             <a href="${pub.link}" class="publication-link" target="_blank" rel="noopener">
-                View Publication
+                ${typeof t === 'function' ? t('research.viewPublication') : 'View Publication'}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
                 </svg>
             </a>
         ` : '';
 
-        const dateInfo = pub.date ? `<p class="publication-date"><strong>Date:</strong> ${pub.date}</p>` : '';
-        const presentationType = pub.presentationType ? `<p class="publication-presentation-type"><strong>Type:</strong> <span class="presentation-badge">${pub.presentationType}</span></p>` : '';
+        const dateLabel = typeof t === 'function' ? t('research.date') : 'Date:';
+        const typeLabel = typeof t === 'function' ? t('research.type') : 'Type:';
+        const dateInfo = pub.date ? `<p class="publication-date"><strong>${dateLabel}</strong> ${pub.date}</p>` : '';
+        const presentationType = pub.presentationType ? `<p class="publication-presentation-type"><strong>${typeLabel}</strong> <span class="presentation-badge">${pub.presentationType}</span></p>` : '';
 
         card.innerHTML = `
             <div class="publication-header">
