@@ -13,11 +13,9 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Hadrien Gayap - AI Research Engineer specializing in Deep Learning for Medical Diagnosis and Cancer Detection">
-    <meta name="keywords"
-        content="AI, Artificial Intelligence, Bioinformatics, Deep Learning, Cancer Detection, Machine Learning, Research">
+        content="Research & Publications - Hadrien Gayap - AI Research Engineer">
     <meta name="author" content="Hadrien Gayap">
-    <title>Hadrien Gayap | AI Research Engineer</title>
+    <title>Research | Hadrien Gayap</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -30,16 +28,16 @@
                 <button class="traffic-light tl-minimize" id="tl-minimize" aria-label="Minimize"></button>
                 <button class="traffic-light tl-maximize" id="tl-maximize" aria-label="Maximize"></button>
             </div>
-            <div class="titlebar-title">hadriengayap.io</div>
+            <div class="titlebar-title">hadriengayap.io/research</div>
         </div>
 
         <!-- Navigation -->
         <nav class="nav-bar">
             <button class="nav-toggle-btn" id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
             <div class="nav-links" id="nav-links">
-                <a href="index.html" class="nav-link active" data-i18n="nav.home">home</a>
+                <a href="index.html" class="nav-link" data-i18n="nav.home">home</a>
                 <span class="nav-separator">|</span>
-                <a href="research.html" class="nav-link" data-i18n="nav.research">research</a>
+                <a href="research.html" class="nav-link active" data-i18n="nav.research">research</a>
                 <span class="nav-separator">|</span>
                 <a href="about.html" class="nav-link" data-i18n="nav.about">about</a>
             </div>
@@ -53,34 +51,63 @@
         <div class="window-body" id="window-body">
             <!-- Main Content -->
             <main class="main-content">
-                <!-- Hero -->
-                <div class="hero-home">
-                    <p class="hero-greeting">
-                        <span id="typing-text"></span><span class="cursor"></span>
-                    </p>
-                    <h1 class="hero-name">Hadrien Gayap</h1>
-                    <p class="hero-subtitle" data-i18n="hero.subtitle">AI Research Engineer & Bioinformatics Specialist</p>
-                    <p class="hero-tagline" data-i18n="hero.tagline">Advancing Medical Diagnosis through Deep Learning & Cancer Detection</p>
-                    <div class="hero-cta">
-                        <a href="research.html" class="btn btn-primary" data-i18n="hero.cta.research">View Research</a>
-                        <a href="about.html#contact" class="btn btn-secondary" data-i18n="hero.cta.contact">Get in Touch</a>
+                <h1 class="section-heading" data-i18n="research.title">Research & Publications</h1>
+
+                <!-- Stats -->
+                <div class="research-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label" data-i18n="research.stat.journals">Journal Articles</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="9">0</span>
+                        <span class="stat-label" data-i18n="research.stat.conferences">Conferences</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="14">0</span>
+                        <span class="stat-label" data-i18n="research.stat.workshops">Workshops</span>
                     </div>
                 </div>
 
-                <!-- Featured Publication -->
-                <div class="featured-section">
-                    <h2 class="section-heading" data-i18n="home.featured">Latest Publication</h2>
-                    <div id="featured-publication"></div>
-                </div>
-
-                <!-- Recent Research Summary -->
-                <div class="featured-section">
-                    <h2 class="section-heading" data-i18n="home.recentResearch">Recent Research</h2>
-                    <div id="recent-publications"></div>
-                    <div style="margin-top: 1.25rem;">
-                        <a href="research.html" class="btn btn-secondary" data-i18n="home.viewAll">View All Publications &rarr;</a>
+                <!-- Filters -->
+                <div class="research-controls">
+                    <div class="search-bar">
+                        <input type="text" id="search-publications" placeholder="Search publications..." aria-label="Search publications" data-i18n-placeholder="research.search.placeholder">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    </div>
+                    <div class="filters">
+                        <select id="filter-type" aria-label="Filter by type">
+                            <option value="all" data-i18n="research.filter.allTypes">All Types</option>
+                            <option value="journal" data-i18n="research.filter.journal">Journal Articles</option>
+                            <option value="conference" data-i18n="research.filter.conference">Conferences</option>
+                            <option value="workshop" data-i18n="research.filter.workshop">Workshops</option>
+                        </select>
+                        <select id="filter-presentation" aria-label="Filter by presentation type">
+                            <option value="all" data-i18n="research.filter.allPresentation">All Presentation Types</option>
+                            <option value="Poster" data-i18n="research.filter.poster">Poster</option>
+                            <option value="Oral Presentation" data-i18n="research.filter.oral">Oral Presentation</option>
+                            <option value="Presentation" data-i18n="research.filter.presentation">Presentation</option>
+                        </select>
+                        <select id="filter-year" aria-label="Filter by year">
+                            <option value="all" data-i18n="research.filter.allYears">All Years</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                        <select id="filter-status" aria-label="Filter by status">
+                            <option value="all" data-i18n="research.filter.allStatus">All Status</option>
+                            <option value="published" data-i18n="research.filter.published">Published</option>
+                            <option value="review" data-i18n="research.filter.review">In Review</option>
+                            <option value="accepted" data-i18n="research.filter.accepted">Accepted</option>
+                        </select>
                     </div>
                 </div>
+
+                <!-- Publications List -->
+                <div id="publications-container" class="publications-list"></div>
             </main>
 
             <!-- Sidebar -->
@@ -97,15 +124,10 @@
                 </div>
 
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title" data-i18n="sidebar.recentPubs">Recent Publications</h3>
-                    <div id="sidebar-publications"></div>
-                </div>
-
-                <div class="sidebar-section">
                     <h3 class="sidebar-title" data-i18n="sidebar.quickLinks">Quick Links</h3>
-                    <a href="research.html" class="sidebar-pub">
-                        <div class="sidebar-pub-title" data-i18n="sidebar.allPubs">All Publications</div>
-                        <div class="sidebar-pub-meta" data-i18n="sidebar.journalsConf">Journals, Conferences & Workshops</div>
+                    <a href="index.html" class="sidebar-pub">
+                        <div class="sidebar-pub-title" data-i18n="nav.home">Home</div>
+                        <div class="sidebar-pub-meta" data-i18n="sidebar.backHome">Back to home page</div>
                     </a>
                     <a href="about.html" class="sidebar-pub">
                         <div class="sidebar-pub-title" data-i18n="sidebar.aboutMe">About Me</div>
@@ -119,7 +141,7 @@
             </aside>
         </div>
 
-        <!-- Closed message (Easter egg) -->
+        <!-- Closed message -->
         <div class="closed-message" id="closed-message">
             <h2 data-i18n="closed.title">Process terminated.</h2>
             <p data-i18n="closed.message">hadriengayap.io has stopped running. Would you like to restart?</p>

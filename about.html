@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function () {
+            var lang = localStorage.getItem('portfolio-lang') ||
+                (navigator.language && navigator.language.startsWith('fr') ? 'fr' : 'en');
+            document.documentElement.lang = lang;
+            document.documentElement.setAttribute('data-lang', lang);
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About Hadrien Gayap - AI Research Engineer, Bio, Education, Experience, Leadership & Awards">
+    <meta name="author" content="Hadrien Gayap">
+    <title>About | Hadrien Gayap</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="window-frame" id="window-frame">
+        <!-- Title Bar -->
+        <div class="titlebar">
+            <div class="traffic-lights">
+                <button class="traffic-light tl-close" id="tl-close" aria-label="Close"></button>
+                <button class="traffic-light tl-minimize" id="tl-minimize" aria-label="Minimize"></button>
+                <button class="traffic-light tl-maximize" id="tl-maximize" aria-label="Maximize"></button>
+            </div>
+            <div class="titlebar-title">hadriengayap.io/about</div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <button class="nav-toggle-btn" id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">home</a>
+                <span class="nav-separator">|</span>
+                <a href="research.html" class="nav-link" data-i18n="nav.research">research</a>
+                <span class="nav-separator">|</span>
+                <a href="about.html" class="nav-link active" data-i18n="nav.about">about</a>
+            </div>
+            <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+                <span class="lang-label lang-en">FR</span>
+                <span class="lang-label lang-fr">EN</span>
+            </button>
+        </nav>
+
+        <!-- Window Body -->
+        <div class="window-body" id="window-body">
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- About Intro -->
+                <h1 class="section-heading" data-i18n="about.title">About Me</h1>
+                <div class="about-intro">
+                    <p class="lead" data-i18n="about.lead">I am a Master's and Computer Engineer specialized in Artificial Intelligence and Bioinformatics through research. Self-taught with strong work autonomy and self-discipline to tackle major challenges.</p>
+                    <p data-i18n="about.paragraph2">I have developed visionary leadership over the years, capable of inspiring and mobilizing teams around ambitious goals. This ability allows me to anticipate social and technological challenges, propose innovative solutions, and guide complex projects to success while fostering collaboration and alignment of efforts.</p>
+                </div>
+
+                <!-- Skills -->
+                <div class="featured-section">
+                    <h2 class="section-heading" data-i18n="about.skills.title">Skills & Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3 data-i18n="about.skills.languages">Languages</h3>
+                            <ul>
+                                <li data-i18n="about.skills.lang.french">French (Native)</li>
+                                <li data-i18n="about.skills.lang.english">English (Fluent)</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3 data-i18n="about.skills.programming">Programming</h3>
+                            <ul>
+                                <li>Pytorch</li>
+                                <li>MLX</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3 data-i18n="about.skills.expertise">Expertise</h3>
+                            <ul>
+                                <li data-i18n="about.skills.llm">Large Language Models</li>
+                                <li data-i18n="about.skills.dl">Deep Learning</li>
+                                <li data-i18n="about.skills.ml">Machine Learning</li>
+                                <li data-i18n="about.skills.bioinfo">Bioinformatics</li>
+                                <li data-i18n="about.skills.compeng">Computer Engineering</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="education-section">
+                    <h2 class="section-heading" data-i18n="about.education">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date" data-i18n="about.edu.phd.date">2025 - 2028</span>
+                                <h4 data-i18n="about.edu.phd.title">PhD in Applied Sciences</h4>
+                                <p data-i18n="about.edu.phd.spec">Specialization in AI for Biology</p>
+                                <p class="institution">Universit&eacute; de Moncton, Canada</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date" data-i18n="about.edu.msc.date">2022 - 2025</span>
+                                <h4 data-i18n="about.edu.msc.title">Master's in Computer Science</h4>
+                                <p data-i18n="about.edu.msc.spec">Specialization in Artificial Intelligence</p>
+                                <p class="institution">Universit&eacute; de Moncton, Canada</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date" data-i18n="about.edu.meng.date">2019 - 2022</span>
+                                <h4 data-i18n="about.edu.meng.title">Master's in Computer Engineering</h4>
+                                <p data-i18n="about.edu.meng.spec">Specialization in Data Science</p>
+                                <p class="institution">ESPRIT, Tunisia</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date" data-i18n="about.edu.prep.date">2016 - 2019</span>
+                                <h4 data-i18n="about.edu.prep.title">Engineering Preparatory Class</h4>
+                                <p class="institution">IUC, Cameroon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="experience-section">
+                    <h2 class="section-heading" data-i18n="exp.title">Professional Experience</h2>
+
+                    <div class="exp-item">
+                        <span class="exp-date" data-i18n="exp.0.date">February 2026 - Present</span>
+                        <h3 data-i18n="exp.0.role">AI Research Engineer</h3>
+                        <h4 data-i18n="exp.0.org">Lexa Intelligence (Frontier Security)</h4>
+                        <ul><li data-i18n="exp.0.b1">R&D team member developing AI solutions for frontier security</li></ul>
+                        <div class="tech-tags"><span>AI Research</span><span>Security</span><span>R&D</span></div>
+                    </div>
+
+                    <div class="exp-item">
+                        <span class="exp-date" data-i18n="exp.1.date">May 2023 - February 2026</span>
+                        <h3 data-i18n="exp.1.role">AI & Computer Science Specialist</h3>
+                        <h4 data-i18n="exp.1.org">Atlantic Institute for Cancer Research, Moncton, Canada</h4>
+                        <ul>
+                            <li data-i18n="exp.1.b1">Lead Developer of LIMS for Pan-Atlantic TerryFox Cancer Project</li>
+                            <li data-i18n="exp.1.b2">Data and compute server management</li>
+                            <li data-i18n="exp.1.b3">Data science and analysis</li>
+                            <li data-i18n="exp.1.b4">Development of AI models for cancer detection in DNA sequences</li>
+                        </ul>
+                        <div class="tech-tags"><span>Python</span><span>Deep Learning</span><span>Bioinformatics</span><span>LIMS</span></div>
+                    </div>
+
+                    <div class="exp-item">
+                        <span class="exp-date" data-i18n="exp.2.date">May 2025 - Present</span>
+                        <h3 data-i18n="exp.2.role">AI Research Professional</h3>
+                        <h4 data-i18n="exp.2.org">Embedded Intelligent and Autonomous Systems (EMBIA), Moncton, Canada</h4>
+                        <ul>
+                            <li data-i18n="exp.2.b1">Lead of Mentorship Program</li>
+                            <li data-i18n="exp.2.b2">AI model development for computer vision</li>
+                            <li data-i18n="exp.2.b3">Deep learning research for cancer detection</li>
+                        </ul>
+                        <div class="tech-tags"><span>Computer Vision</span><span>Deep Learning</span><span>Mentorship</span></div>
+                    </div>
+
+                    <div class="exp-item">
+                        <span class="exp-date" data-i18n="exp.3.date">January 2023 - May 2025</span>
+                        <h3 data-i18n="exp.3.role">Research Assistant - Artificial Intelligence</h3>
+                        <h4 data-i18n="exp.3.org">Perception, Robotics and Intelligent Machine (PRIME), UMoncton, Canada</h4>
+                        <ul><li data-i18n="exp.3.b1">Development of AI for medical diagnosis</li></ul>
+                        <div class="tech-tags"><span>Medical AI</span><span>Machine Learning</span></div>
+                    </div>
+
+                    <div class="exp-item">
+                        <span class="exp-date" data-i18n="exp.4.date">May 2023 - April 2024</span>
+                        <h3 data-i18n="exp.4.role">Research Assistant - Bioinformatics & AI</h3>
+                        <h4 data-i18n="exp.4.org">New Brunswick Centre for Precision Medicine, Canada</h4>
+                        <ul>
+                            <li data-i18n="exp.4.b1">Combined RNA sequencing (RNA-seq) with low-coverage whole genome sequencing for detecting clinically relevant molecular biomarkers in leukemia</li>
+                            <li data-i18n="exp.4.b2">Redefinition of tumor mutational burden measurement using ICGC database</li>
+                        </ul>
+                        <div class="tech-tags"><span>RNA-seq</span><span>WGS</span><span>Biomarkers</span></div>
+                    </div>
+
+                    <div class="exp-item">
+                        <span class="exp-date" data-i18n="exp.5.date">January - July 2022</span>
+                        <h3 data-i18n="exp.5.role">Research Assistant - Internship</h3>
+                        <h4 data-i18n="exp.5.org">ESPRIT-Tech, Tunisia</h4>
+                        <ul><li data-i18n="exp.5.b1">Stroke prediction using AI</li></ul>
+                        <div class="tech-tags"><span>Predictive Modeling</span><span>Healthcare AI</span></div>
+                    </div>
+
+                    <div class="exp-item">
+                        <span class="exp-date" data-i18n="exp.6.date">June - August 2021</span>
+                        <h3 data-i18n="exp.6.role">Research Student - Engineering Internship</h3>
+                        <h4 data-i18n="exp.6.org">ESPRIT-Tech, Tunisia</h4>
+                        <ul>
+                            <li data-i18n="exp.6.b1">Epilepsy prediction using AI</li>
+                            <li data-i18n="exp.6.b2">Analysis of EEG channel contributions for intelligent prediction</li>
+                        </ul>
+                        <div class="tech-tags"><span>EEG Analysis</span><span>Neural Networks</span></div>
+                    </div>
+                </div>
+
+                <!-- Leadership -->
+                <div class="featured-section">
+                    <h2 class="section-heading" data-i18n="leadership.title">Leadership & Community Engagement</h2>
+                    <div class="leadership-grid">
+                        <div class="leadership-card featured">
+                            <div class="card-icon">&#127963;&#65039;</div>
+                            <h3 data-i18n="leadership.1.role">Vice-President</h3>
+                            <h4 data-i18n="leadership.1.org">Provincial Council of People of African Descent of NB</h4>
+                            <span class="date" data-i18n="leadership.1.date">January 2025 - Present</span>
+                            <ul>
+                                <li data-i18n="leadership.1.b1">Official spokesperson and public face of the organization</li>
+                                <li data-i18n="leadership.1.b2">Strategic leadership and mission implementation</li>
+                                <li data-i18n="leadership.1.b3">Advocacy with governments and institutions</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-card">
+                            <div class="card-icon">&#129309;</div>
+                            <h3 data-i18n="leadership.2.role">Volunteer Leader</h3>
+                            <h4 data-i18n="leadership.2.org">Development & Peace, Canada</h4>
+                            <span class="date" data-i18n="leadership.2.date">January 2023 - Present</span>
+                            <ul>
+                                <li data-i18n="leadership.2.b1">Lead francophone youth division at Universit&eacute; de Moncton</li>
+                                <li data-i18n="leadership.2.b2">Working towards a world of justice and peace</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-card">
+                            <div class="card-icon">&#127918;</div>
+                            <h3 data-i18n="leadership.3.role">Volunteer Manager</h3>
+                            <h4 data-i18n="leadership.3.org">E-Sport Hall, Universit&eacute; de Moncton</h4>
+                            <span class="date" data-i18n="leadership.3.date">September 2024 - Present</span>
+                            <ul>
+                                <li data-i18n="leadership.3.b1">Volunteer management and coordination</li>
+                                <li data-i18n="leadership.3.b2">Service schedule planning</li>
+                                <li data-i18n="leadership.3.b3">Facility maintenance</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-card">
+                            <div class="card-icon">&#128499;&#65039;</div>
+                            <h3 data-i18n="leadership.4.role">IT Specialist</h3>
+                            <h4 data-i18n="leadership.4.org">Provincial Election Campaign, Moncton-Est</h4>
+                            <span class="date" data-i18n="leadership.4.date">June - October 2024</span>
+                            <ul>
+                                <li data-i18n="leadership.4.b1">Digital communication plan implementation</li>
+                                <li data-i18n="leadership.4.b2">Candidate calendar management</li>
+                                <li data-i18n="leadership.4.b3">Voter database management</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-card">
+                            <div class="card-icon">&#127758;</div>
+                            <h3 data-i18n="leadership.5.role">Coordinator</h3>
+                            <h4 data-i18n="leadership.5.org">REFACAM Association - Cameroon Families of Greater Moncton</h4>
+                            <span class="date" data-i18n="leadership.5.date">December 2023 - May 2024</span>
+                            <ul>
+                                <li data-i18n="leadership.5.b1">Collaboration with other city associations</li>
+                                <li data-i18n="leadership.5.b2">Parish outreach and awareness</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-card">
+                            <div class="card-icon">&#9962;</div>
+                            <h3 data-i18n="leadership.6.role">Volunteer</h3>
+                            <h4 data-i18n="leadership.6.org">Archdiocese of Moncton</h4>
+                            <span class="date" data-i18n="leadership.6.date">February 2023 - Present</span>
+                            <ul>
+                                <li data-i18n="leadership.6.b1">Website redesign project engineer</li>
+                                <li data-i18n="leadership.6.b2">Catechesis coordinator</li>
+                                <li data-i18n="leadership.6.b3">Knights of Columbus member</li>
+                                <li data-i18n="leadership.6.b4">Sunday liturgy coordinator</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-card">
+                            <div class="card-icon">&#127891;</div>
+                            <h3 data-i18n="leadership.7.role">Student Ambassador</h3>
+                            <h4 data-i18n="leadership.7.org">ESPRIT, Tunisia</h4>
+                            <span class="date" data-i18n="leadership.7.date">2021 - 2022</span>
+                            <ul>
+                                <li data-i18n="leadership.7.b1">Student representative at Honoris United Universities</li>
+                                <li data-i18n="leadership.7.b2">International student welcome and support</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-card">
+                            <div class="card-icon">&#128218;</div>
+                            <h3 data-i18n="leadership.8.role">Scientific Council Member</h3>
+                            <h4 data-i18n="leadership.8.org">ESPRIT, Tunisia</h4>
+                            <span class="date" data-i18n="leadership.8.date">2020 - 2021</span>
+                            <ul>
+                                <li data-i18n="leadership.8.b1">Review of academic programs and research</li>
+                                <li data-i18n="leadership.8.b2">Faculty career development consultation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div class="featured-section">
+                    <h2 class="section-heading" data-i18n="awards.title">Awards & Recognition</h2>
+                    <div class="awards-summary">
+                        <div class="total-funding">
+                            <span class="funding-amount">$28,750+</span>
+                            <span class="funding-label" data-i18n="awards.totalLabel">Total Scholarships & Awards</span>
+                        </div>
+                    </div>
+                    <div class="awards-grid">
+                        <div class="award-card">
+                            <div class="award-year">2025</div>
+                            <h3 data-i18n="awards.1.name">CCG Leadership Scholarship</h3>
+                            <p class="award-org" data-i18n="awards.1.org">CCGoodwin Consulting</p>
+                            <span class="award-amount">$1,000</span>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-year">2025</div>
+                            <h3 data-i18n="awards.2.name">L'alUMni Leadership Scholarship</h3>
+                            <p class="award-org" data-i18n="awards.2.org">Meloche Monnex Insurance</p>
+                            <span class="award-amount">$2,500</span>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-year">2025</div>
+                            <h3 data-i18n="awards.3.name">Study Scholarship</h3>
+                            <p class="award-org" data-i18n="awards.3.org">Knights of Columbus, Moncton</p>
+                            <span class="award-amount">$500</span>
+                        </div>
+                        <div class="award-card featured">
+                            <div class="award-year">2024</div>
+                            <h3 data-i18n="awards.4.name">Prof. Moulay Akhloufi Research Scholarship</h3>
+                            <p class="award-org" data-i18n="awards.4.org">Universit&eacute; de Moncton</p>
+                            <span class="award-amount">$8,000</span>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-year">2024</div>
+                            <h3 data-i18n="awards.5.name">Dr. Denis Prud'homme & AIEECUM Leadership Scholarship</h3>
+                            <p class="award-org" data-i18n="awards.5.org">Universit&eacute; de Moncton</p>
+                            <span class="award-amount">$1,000</span>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-year">2023</div>
+                            <h3 data-i18n="awards.6.name">Excellence Scholarship</h3>
+                            <p class="award-org" data-i18n="awards.6.org">CAFI - Government of New Brunswick</p>
+                            <span class="award-amount">$250</span>
+                            <p class="award-note" data-i18n="awards.6.note">International Student Retention Program</p>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-year">2022</div>
+                            <h3 data-i18n="awards.7.name">NDA Excellence Scholarship</h3>
+                            <p class="award-org" data-i18n="awards.7.org">Notre Dame d'Acadie Parish</p>
+                            <span class="award-amount">$500</span>
+                        </div>
+                        <div class="award-card featured">
+                            <div class="award-year">2022</div>
+                            <h3 data-i18n="awards.8.name">Research Grant</h3>
+                            <p class="award-org" data-i18n="awards.8.org">Research Assistant with Prof. Moulay Akhloufi</p>
+                            <span class="award-amount">$16,000</span>
+                        </div>
+                        <div class="award-card competition">
+                            <div class="award-year">2021</div>
+                            <h3 data-i18n="awards.9.name">Finalist - Project Gala</h3>
+                            <p class="award-org" data-i18n="awards.9.org">ESPRIT, Tunisia - Data Science Category</p>
+                            <p class="award-note" data-i18n="awards.9.note">Intelligent platform for epilepsy treatment support</p>
+                        </div>
+                        <div class="award-card competition">
+                            <div class="award-year">2018</div>
+                            <h3 data-i18n="awards.10.name">Finalist - GETEC Competition</h3>
+                            <p class="award-org" data-i18n="awards.10.org">Ministry of Higher Education, Cameroon</p>
+                            <p class="award-note" data-i18n="awards.10.note">App facilitating telecom operator services access</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Affiliations -->
+                <div class="affiliations">
+                    <h2 class="section-heading" data-i18n="affiliations.title">Professional Affiliations</h2>
+                    <div class="affiliation-list">
+                        <div class="affiliation-item">
+                            <h4 data-i18n="affil.1.name">Institute of Electrical and Electronics Engineers (IEEE)</h4>
+                            <span data-i18n="affil.1.detail">Member, September 2021 - Present</span>
+                        </div>
+                        <div class="affiliation-item">
+                            <h4 data-i18n="affil.2.name">Intel Corporation</h4>
+                            <span data-i18n="affil.2.detail">oneAPI Student Ambassador, September 2023 - Present</span>
+                        </div>
+                        <div class="affiliation-item">
+                            <h4 data-i18n="affil.3.name">Canadian Respiratory Research Network</h4>
+                            <span data-i18n="affil.3.detail">Research Trainee, September 2023 - Present</span>
+                        </div>
+                        <div class="affiliation-item">
+                            <h4 data-i18n="affil.4.name">Tunisian Order of Engineers</h4>
+                            <span data-i18n="affil.4.detail">Computer Engineer, July 2022 - Present</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="contact-section" id="contact">
+                    <h2 class="section-heading" data-i18n="contact.title">Get In Touch</h2>
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h3 data-i18n="contact.info.title">Contact Information</h3>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <div>
+                                    <strong data-i18n="contact.location.label">Location</strong>
+                                    <p data-i18n="contact.location.value">Moncton, New Brunswick, Canada</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                <div>
+                                    <strong data-i18n="contact.email.label">Email</strong>
+                                    <p><a href="mailto:gthadrien111@gmail.com">gthadrien111@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-primary); margin-bottom: 1rem;" data-i18n="contact.form.title">Send a Message</h3>
+                            <form class="contact-form" id="contact-form">
+                                <div class="form-group">
+                                    <label for="name" data-i18n="contact.form.name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" data-i18n="contact.form.email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject" data-i18n="contact.form.subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" data-i18n="contact.form.message">Message</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-profile">
+                    <img src="assets/profile.jpg" alt="Hadrien Gayap" class="sidebar-profile-img">
+                    <div class="sidebar-profile-name">Hadrien Gayap</div>
+                    <div class="sidebar-profile-role" data-i18n="sidebar.role">AI Research Engineer</div>
+                    <div class="sidebar-social">
+                        <a href="mailto:gthadrien111@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+                        <a href="https://linkedin.com/in/hadriengayap" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+                        <a href="https://github.com/gth-ai" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title" data-i18n="sidebar.recentPubs">Recent Publications</h3>
+                    <div id="sidebar-publications"></div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title" data-i18n="sidebar.quickLinks">Quick Links</h3>
+                    <a href="index.html" class="sidebar-pub">
+                        <div class="sidebar-pub-title" data-i18n="nav.home">Home</div>
+                        <div class="sidebar-pub-meta" data-i18n="sidebar.backHome">Back to home page</div>
+                    </a>
+                    <a href="research.html" class="sidebar-pub">
+                        <div class="sidebar-pub-title" data-i18n="sidebar.allPubs">All Publications</div>
+                        <div class="sidebar-pub-meta" data-i18n="sidebar.journalsConf">Journals, Conferences & Workshops</div>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Closed message -->
+        <div class="closed-message" id="closed-message">
+            <h2 data-i18n="closed.title">Process terminated.</h2>
+            <p data-i18n="closed.message">hadriengayap.io has stopped running. Would you like to restart?</p>
+            <button id="restart-btn" data-i18n="closed.restart">Restart</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="window-footer">
+            <div class="footer-left" data-i18n="footer.copyright">&copy; 2026 Hadrien Gayap</div>
+            <div class="footer-center">
+                <a href="mailto:gthadrien111@gmail.com"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <span data-i18n="footer.email">Email</span></a>
+                <a href="https://linkedin.com/in/hadriengayap" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg> LinkedIn</a>
+                <a href="https://github.com/gth-ai" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg> GitHub</a>
+            </div>
+            <div class="footer-right" data-i18n="footer.message">message me &rarr;</div>
+        </footer>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

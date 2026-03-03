@@ -53,7 +53,7 @@ const publications = [
         venue: '2025 6th International Conference on Bio-engineering for Smart Technologies (BioSMART). IEEE',
         link: 'https://ieeexplore.ieee.org/abstract/document/11046100'
     },
-    
+
     // Conferences
     {
         id: 6,
@@ -154,7 +154,7 @@ const publications = [
         date: 'November 18, 2023',
         presentationType: 'Presentation'
     },
-    
+
     {
         id: 27,
         type: 'workshop',
@@ -301,321 +301,298 @@ const publications = [
 ];
 
 // ==========================================
-// NAVIGATION
+// TRAFFIC LIGHT BUTTONS
 // ==========================================
-const navbar = document.getElementById('navbar');
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+(function initTrafficLights() {
+    const frame = document.getElementById('window-frame');
+    const body = document.getElementById('window-body');
+    const closedMsg = document.getElementById('closed-message');
+    const footer = document.querySelector('.window-footer');
 
-// Sticky navbar on scroll
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+    const closeBtn = document.getElementById('tl-close');
+    const minimizeBtn = document.getElementById('tl-minimize');
+    const maximizeBtn = document.getElementById('tl-maximize');
+    const restartBtn = document.getElementById('restart-btn');
 
-// Mobile menu toggle
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
-// Active navigation link based on scroll position
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('.section, .hero');
-    const scrollPosition = window.scrollY + 100;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-}
-
-window.addEventListener('scroll', updateActiveNavLink);
-
-// ==========================================
-// SMOOTH SCROLL
-// ==========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// ==========================================
-// SCROLL ANIMATIONS
-// ==========================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-// Observe all elements with fade-in class
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Add fade-in class to relevant sections
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll(
-        '.section-title, .about-content, .timeline-item, .experience-item, .leadership-card, .award-card, .contact-content, .contact-details'
-    );
-    animatedElements.forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
-});
-
-// ==========================================
-// STATISTICS COUNTER ANIMATION
-// ==========================================
-function animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target'));
-    const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-}
-
-const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(statNumber => {
-                if (!statNumber.classList.contains('animated')) {
-                    statNumber.classList.add('animated');
-                    animateCounter(statNumber);
-                }
-            });
-        }
-    });
-}, { threshold: 0.3 });
-
-// Observe the stats section when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    const statsSection = document.querySelector('.research-stats');
-    if (statsSection) {
-        statObserver.observe(statsSection);
-    }
-});
-
-// ==========================================
-// PUBLICATIONS
-// ==========================================
-function renderPublications(filteredPublications = publications) {
-    const container = document.getElementById('publications-container');
-    container.innerHTML = '';
-
-    if (filteredPublications.length === 0) {
-        container.innerHTML = `
-            <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
-                <p style="font-size: 1.125rem;">${typeof t === 'function' ? t('research.noResults') : 'No publications found matching your criteria.'}</p>
-            </div>
-        `;
-        return;
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            if (body) body.style.display = 'none';
+            if (footer) footer.style.display = 'none';
+            if (closedMsg) closedMsg.classList.add('visible');
+            frame.classList.remove('minimized', 'maximized');
+        });
     }
 
-    filteredPublications.forEach(pub => {
-        const card = document.createElement('div');
-        card.className = 'publication-card fade-in';
-        card.setAttribute('data-type', pub.type);
-        card.setAttribute('data-year', pub.year);
-        card.setAttribute('data-status', pub.status);
+    if (minimizeBtn) {
+        minimizeBtn.addEventListener('click', function () {
+            frame.classList.toggle('minimized');
+            frame.classList.remove('maximized');
+            if (closedMsg) closedMsg.classList.remove('visible');
+            if (body) body.style.display = '';
+            if (footer) footer.style.display = '';
+        });
+    }
 
-        const authorsList = pub.authors.map(author => {
-            if (author.includes('Gayap')) {
-                return `<span class="highlight">${author}</span>`;
-            }
-            return author;
-        }).join(', ');
+    if (maximizeBtn) {
+        maximizeBtn.addEventListener('click', function () {
+            frame.classList.toggle('maximized');
+            frame.classList.remove('minimized');
+            if (closedMsg) closedMsg.classList.remove('visible');
+            if (body) body.style.display = '';
+            if (footer) footer.style.display = '';
+        });
+    }
 
-        const statusLabel = typeof t === 'function' ? t('research.status.' + pub.status) : (pub.status === 'review' ? 'In Review' : pub.status.charAt(0).toUpperCase() + pub.status.slice(1));
-        const statusBadge = pub.status ? `
-            <span class="publication-status ${pub.status}">${statusLabel}</span>
-        ` : '';
-
-        const linkHtml = pub.link ? `
-            <a href="${pub.link}" class="publication-link" target="_blank" rel="noopener">
-                ${typeof t === 'function' ? t('research.viewPublication') : 'View Publication'}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                </svg>
-            </a>
-        ` : '';
-
-        const dateLabel = typeof t === 'function' ? t('research.date') : 'Date:';
-        const typeLabel = typeof t === 'function' ? t('research.type') : 'Type:';
-        const dateInfo = pub.date ? `<p class="publication-date"><strong>${dateLabel}</strong> ${pub.date}</p>` : '';
-        const presentationType = pub.presentationType ? `<p class="publication-presentation-type"><strong>${typeLabel}</strong> <span class="presentation-badge">${pub.presentationType}</span></p>` : '';
-
-        card.innerHTML = `
-            <div class="publication-header">
-                <span class="publication-type ${pub.type}">${pub.type}</span>
-                ${statusBadge}
-            </div>
-            <h3 class="publication-title">${pub.title}</h3>
-            <p class="publication-authors">${authorsList}</p>
-            <p class="publication-venue">${pub.venue}</p>
-            ${dateInfo}
-            ${presentationType}
-            ${linkHtml}
-        `;
-
-        container.appendChild(card);
-    });
-
-    // Re-observe new elements for scroll animation
-    document.querySelectorAll('.publication-card').forEach(el => {
-        observer.observe(el);
-    });
-}
-
-// Filter publications
-function filterPublications() {
-    const searchTerm = document.getElementById('search-publications').value.toLowerCase();
-    const typeFilter = document.getElementById('filter-type').value;
-    const presentationFilter = document.getElementById('filter-presentation').value;
-    const yearFilter = document.getElementById('filter-year').value;
-    const statusFilter = document.getElementById('filter-status').value;
-
-    const filtered = publications.filter(pub => {
-        const matchesSearch = pub.title.toLowerCase().includes(searchTerm) ||
-                            pub.authors.some(author => author.toLowerCase().includes(searchTerm)) ||
-                            pub.venue.toLowerCase().includes(searchTerm);
-        const matchesType = typeFilter === 'all' || pub.type === typeFilter;
-        const matchesPresentation = presentationFilter === 'all' || pub.presentationType === presentationFilter;
-        const matchesYear = yearFilter === 'all' || pub.year.toString() === yearFilter;
-        const matchesStatus = statusFilter === 'all' || pub.status === statusFilter;
-
-        return matchesSearch && matchesType && matchesPresentation && matchesYear && matchesStatus;
-    });
-
-    renderPublications(filtered);
-}
-
-// Event listeners for filters
-document.getElementById('search-publications').addEventListener('input', filterPublications);
-document.getElementById('filter-type').addEventListener('change', filterPublications);
-document.getElementById('filter-presentation').addEventListener('change', filterPublications);
-document.getElementById('filter-year').addEventListener('change', filterPublications);
-document.getElementById('filter-status').addEventListener('change', filterPublications);
-
-// Initial render
-renderPublications();
+    if (restartBtn) {
+        restartBtn.addEventListener('click', function () {
+            if (closedMsg) closedMsg.classList.remove('visible');
+            if (body) body.style.display = '';
+            if (footer) footer.style.display = '';
+            frame.classList.remove('minimized', 'maximized');
+        });
+    }
+})();
 
 // ==========================================
-// CONTACT FORM
+// MOBILE NAV TOGGLE
 // ==========================================
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    const mailtoLink = `mailto:gthadrien111@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    
-    window.location.href = mailtoLink;
-    
-    // Reset form
-    contactForm.reset();
-});
+(function initMobileNav() {
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function () {
+            links.classList.toggle('active');
+        });
+    }
+})();
 
 // ==========================================
-// PERFORMANCE OPTIMIZATIONS
+// TYPING EFFECT (Home page)
 // ==========================================
-// Debounce function for search
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+(function initTypingEffect() {
+    const el = document.getElementById('typing-text');
+    if (!el) return;
+
+    const lang = document.documentElement.getAttribute('data-lang') || 'en';
+    const texts = {
+        en: '> Hello, I\'m',
+        fr: '> Bonjour, je suis'
     };
+    const text = texts[lang] || texts.en;
+    let i = 0;
+
+    function type() {
+        if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 60);
+        }
+    }
+
+    // Small delay before starting
+    setTimeout(type, 500);
+})();
+
+// ==========================================
+// RENDER PUBLICATION CARD (shared utility)
+// ==========================================
+function renderPubCard(pub) {
+    const authorsList = pub.authors.map(function (author) {
+        if (author.includes('Gayap')) {
+            return '<span class="highlight">' + author + '</span>';
+        }
+        return author;
+    }).join(', ');
+
+    const statusLabel = typeof t === 'function' ? t('research.status.' + pub.status) : (pub.status === 'review' ? 'In Review' : pub.status.charAt(0).toUpperCase() + pub.status.slice(1));
+    const statusHtml = pub.status ? '<span class="pub-status ' + pub.status + '">' + statusLabel + '</span>' : '';
+
+    const linkHtml = pub.link ? '<a href="' + pub.link + '" class="pub-link" target="_blank" rel="noopener">' + (typeof t === 'function' ? t('research.viewPublication') : 'View Publication') + ' &rarr;</a>' : '';
+
+    const dateLabel = typeof t === 'function' ? t('research.date') : 'Date:';
+    const dateHtml = pub.date ? '<span class="pub-date">' + dateLabel + ' ' + pub.date + '</span>' : '';
+    const presentationHtml = pub.presentationType ? '<span class="pub-presentation">' + pub.presentationType + '</span>' : '';
+
+    return '<div class="pub-card" data-type="' + pub.type + '" data-year="' + pub.year + '" data-status="' + pub.status + '">' +
+        '<div class="pub-card-header">' +
+            '<span class="pub-tag ' + pub.type + '">' + pub.type + '</span>' +
+            statusHtml +
+            '<span class="pub-year">' + pub.year + '</span>' +
+        '</div>' +
+        '<h3 class="pub-title">' + pub.title + '</h3>' +
+        '<p class="pub-authors">' + authorsList + '</p>' +
+        '<p class="pub-venue">' + pub.venue + '</p>' +
+        (dateHtml || presentationHtml || linkHtml ?
+            '<div class="pub-meta">' + dateHtml + presentationHtml + linkHtml + '</div>' : '') +
+    '</div>';
 }
 
-// Apply debounce to search
-const searchInput = document.getElementById('search-publications');
-searchInput.removeEventListener('input', filterPublications);
-searchInput.addEventListener('input', debounce(filterPublications, 300));
+// ==========================================
+// HOME PAGE: Featured & Recent publications
+// ==========================================
+(function initHomePubs() {
+    // Featured: most recent journal article
+    var featuredContainer = document.getElementById('featured-publication');
+    if (featuredContainer) {
+        var journals = publications.filter(function (p) { return p.type === 'journal'; });
+        journals.sort(function (a, b) { return b.year - a.year || b.id - a.id; });
+        if (journals.length > 0) {
+            featuredContainer.innerHTML = renderPubCard(journals[0]);
+        }
+    }
+
+    // Recent: next 4 most recent (any type)
+    var recentContainer = document.getElementById('recent-publications');
+    if (recentContainer) {
+        var sorted = publications.slice().sort(function (a, b) { return b.year - a.year || b.id - a.id; });
+        var recent = sorted.slice(1, 5);
+        recentContainer.innerHTML = recent.map(renderPubCard).join('');
+    }
+})();
 
 // ==========================================
-// INITIALIZATION
+// SIDEBAR: Recent publications (all pages)
 // ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Portfolio loaded successfully!');
-    
-    // Initial active nav link
-    updateActiveNavLink();
-    
-    // Lazy load images
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+(function initSidebarPubs() {
+    var container = document.getElementById('sidebar-publications');
+    if (!container) return;
+
+    var sorted = publications.slice().sort(function (a, b) { return b.year - a.year || b.id - a.id; });
+    var recent = sorted.slice(0, 5);
+
+    container.innerHTML = recent.map(function (pub) {
+        return '<a href="research.html" class="sidebar-pub">' +
+            '<div class="sidebar-pub-title">' + pub.title.substring(0, 60) + (pub.title.length > 60 ? '...' : '') + '</div>' +
+            '<div class="sidebar-pub-meta">' + pub.type + ' &middot; ' + pub.year + '</div>' +
+        '</a>';
+    }).join('');
+})();
+
+// ==========================================
+// RESEARCH PAGE: Full publications + filtering
+// ==========================================
+(function initResearchPage() {
+    var container = document.getElementById('publications-container');
+    if (!container) return;
+
+    var searchInput = document.getElementById('search-publications');
+    var filterType = document.getElementById('filter-type');
+    var filterPresentation = document.getElementById('filter-presentation');
+    var filterYear = document.getElementById('filter-year');
+    var filterStatus = document.getElementById('filter-status');
+
+    function renderAll(filtered) {
+        if (filtered.length === 0) {
+            container.innerHTML = '<div class="no-results">' + (typeof t === 'function' ? t('research.noResults') : 'No publications found matching your criteria.') + '</div>';
+            return;
+        }
+        container.innerHTML = filtered.map(renderPubCard).join('');
+    }
+
+    function filterPublications() {
+        var searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        var type = filterType ? filterType.value : 'all';
+        var presentation = filterPresentation ? filterPresentation.value : 'all';
+        var year = filterYear ? filterYear.value : 'all';
+        var status = filterStatus ? filterStatus.value : 'all';
+
+        var filtered = publications.filter(function (pub) {
+            var matchesSearch = pub.title.toLowerCase().includes(searchTerm) ||
+                pub.authors.some(function (a) { return a.toLowerCase().includes(searchTerm); }) ||
+                pub.venue.toLowerCase().includes(searchTerm);
+            var matchesType = type === 'all' || pub.type === type;
+            var matchesPresentation = presentation === 'all' || pub.presentationType === presentation;
+            var matchesYear = year === 'all' || pub.year.toString() === year;
+            var matchesStatus = status === 'all' || pub.status === status;
+
+            return matchesSearch && matchesType && matchesPresentation && matchesYear && matchesStatus;
+        });
+
+        // Sort by year desc then id desc
+        filtered.sort(function (a, b) { return b.year - a.year || b.id - a.id; });
+
+        renderAll(filtered);
+    }
+
+    // Debounce for search
+    var searchTimeout;
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(filterPublications, 300);
+        });
+    }
+    if (filterType) filterType.addEventListener('change', filterPublications);
+    if (filterPresentation) filterPresentation.addEventListener('change', filterPublications);
+    if (filterYear) filterYear.addEventListener('change', filterPublications);
+    if (filterStatus) filterStatus.addEventListener('change', filterPublications);
+
+    // Expose for i18n re-render
+    window.filterPublications = filterPublications;
+
+    // Initial render
+    filterPublications();
+})();
+
+// ==========================================
+// STAT COUNTER ANIMATION (Research page)
+// ==========================================
+(function initStatCounters() {
+    var statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    if (statNumbers.length === 0) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
+                var el = entry.target;
+                if (el.classList.contains('animated')) return;
+                el.classList.add('animated');
+
+                var target = parseInt(el.getAttribute('data-target'));
+                var duration = 1500;
+                var increment = target / (duration / 16);
+                var current = 0;
+
+                var timer = setInterval(function () {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current);
+                    }
+                }, 16);
             }
         });
+    }, { threshold: 0.3 });
+
+    statNumbers.forEach(function (el) { observer.observe(el); });
+})();
+
+// ==========================================
+// CONTACT FORM (About page)
+// ==========================================
+(function initContactForm() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+
+        var mailtoLink = 'mailto:gthadrien111@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+        window.location.href = mailtoLink;
+        form.reset();
     });
-    
-    images.forEach(img => imageObserver.observe(img));
-});
+})();
 
 // ==========================================
-// EASTER EGG - Console Message
+// CONSOLE EASTER EGG
 // ==========================================
-console.log('%c👋 Hello there!', 'font-size: 20px; font-weight: bold; color: #2563eb;');
-console.log('%cInterested in AI and Bioinformatics?', 'font-size: 14px; color: #10b981;');
-console.log('%cLet\'s connect: gthadrien111@gmail.com', 'font-size: 14px; color: #6b7280;');
-
+console.log('%c> hadriengayap.io', 'font-family: monospace; font-size: 16px; font-weight: bold; color: #00d4ff;');
+console.log('%c> AI Research Engineer | Bioinformatics', 'font-family: monospace; font-size: 12px; color: #8b949e;');
+console.log('%c> Contact: gthadrien111@gmail.com', 'font-family: monospace; font-size: 12px; color: #484f58;');

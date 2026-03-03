@@ -5,28 +5,47 @@
 const translations = {
     en: {
         // Meta
-        "meta.title": "Hadrien Gayap | AI Researcher & Community Leader",
-        "meta.description": "Hadrien Gayap - AI Researcher & Bioinformatics Specialist specializing in Deep Learning for Medical Diagnosis and Cancer Detection",
+        "meta.title": "Hadrien Gayap | AI Research Engineer",
+        "meta.description": "Hadrien Gayap - AI Research Engineer specializing in Deep Learning for Medical Diagnosis and Cancer Detection",
 
         // Navigation
-        "nav.home": "Home",
-        "nav.about": "About",
-        "nav.research": "Research",
-        "nav.experience": "Experience",
-        "nav.leadership": "Leadership",
-        "nav.awards": "Awards",
-        "nav.contact": "Contact",
+        "nav.home": "home",
+        "nav.research": "research",
+        "nav.about": "about",
 
         // Hero
-        "hero.subtitle": "AI Researcher & Bioinformatics Specialist",
+        "hero.subtitle": "AI Research Engineer & Bioinformatics Specialist",
         "hero.tagline": "Advancing Medical Diagnosis through Deep Learning & Cancer Detection",
         "hero.cta.research": "View Research",
         "hero.cta.contact": "Get in Touch",
+
+        // Home page
+        "home.featured": "Latest Publication",
+        "home.recentResearch": "Recent Research",
+        "home.viewAll": "View All Publications \u2192",
+
+        // Sidebar
+        "sidebar.role": "AI Research Engineer",
+        "sidebar.recentPubs": "Recent Publications",
+        "sidebar.quickLinks": "Quick Links",
+        "sidebar.allPubs": "All Publications",
+        "sidebar.journalsConf": "Journals, Conferences & Workshops",
+        "sidebar.aboutMe": "About Me",
+        "sidebar.bioEdu": "Bio, Education & Experience",
+        "sidebar.contact": "Contact",
+        "sidebar.getInTouch": "Get in touch",
+        "sidebar.backHome": "Back to home page",
+
+        // Closed message
+        "closed.title": "Process terminated.",
+        "closed.message": "hadriengayap.io has stopped running. Would you like to restart?",
+        "closed.restart": "Restart",
 
         // About
         "about.title": "About Me",
         "about.lead": "I am a Master's and Computer Engineer specialized in Artificial Intelligence and Bioinformatics through research. Self-taught with strong work autonomy and self-discipline to tackle major challenges.",
         "about.paragraph2": "I have developed visionary leadership over the years, capable of inspiring and mobilizing teams around ambitious goals. This ability allows me to anticipate social and technological challenges, propose innovative solutions, and guide complex projects to success while fostering collaboration and alignment of efforts.",
+        "about.skills.title": "Skills & Expertise",
         "about.skills.languages": "Languages",
         "about.skills.lang.french": "French (Native)",
         "about.skills.lang.english": "English (Fluent)",
@@ -209,7 +228,6 @@ const translations = {
         "contact.location.label": "Location",
         "contact.location.value": "Moncton, New Brunswick, Canada",
         "contact.email.label": "Email",
-        "contact.phone.label": "Phone",
         "contact.form.title": "Send a Message",
         "contact.form.name": "Name",
         "contact.form.email": "Email",
@@ -218,36 +236,54 @@ const translations = {
         "contact.form.submit": "Send Message",
 
         // Footer
-        "footer.copyright": "\u00a9 2026 Hadrien Gayap. All rights reserved.",
-        "footer.tagline": "Advancing Medical AI & Cancer Detection Research",
-        "footer.navTitle": "Navigation",
-        "footer.connectTitle": "Connect"
+        "footer.copyright": "\u00a9 2026 Hadrien Gayap",
+        "footer.email": "Email",
+        "footer.message": "message me \u2192"
     },
 
     fr: {
         // Meta
-        "meta.title": "Hadrien Gayap | Chercheur en IA & Leader communautaire",
-        "meta.description": "Hadrien Gayap - Chercheur en IA & Sp\u00e9cialiste en bio-informatique, sp\u00e9cialis\u00e9 en apprentissage profond pour le diagnostic m\u00e9dical et la d\u00e9tection du cancer",
+        "meta.title": "Hadrien Gayap | Ing\u00e9nieur de recherche en IA",
+        "meta.description": "Hadrien Gayap - Ing\u00e9nieur de recherche en IA sp\u00e9cialis\u00e9 en apprentissage profond pour le diagnostic m\u00e9dical et la d\u00e9tection du cancer",
 
         // Navigation
-        "nav.home": "Accueil",
-        "nav.about": "\u00c0 propos",
-        "nav.research": "Recherche",
-        "nav.experience": "Exp\u00e9rience",
-        "nav.leadership": "Leadership",
-        "nav.awards": "Prix",
-        "nav.contact": "Contact",
+        "nav.home": "accueil",
+        "nav.research": "recherche",
+        "nav.about": "\u00e0 propos",
 
         // Hero
-        "hero.subtitle": "Chercheur en IA & Sp\u00e9cialiste en bio-informatique",
+        "hero.subtitle": "Ing\u00e9nieur de recherche en IA & Sp\u00e9cialiste en bio-informatique",
         "hero.tagline": "Faire progresser le diagnostic m\u00e9dical par l'apprentissage profond et la d\u00e9tection du cancer",
         "hero.cta.research": "Voir la recherche",
         "hero.cta.contact": "Me contacter",
+
+        // Home page
+        "home.featured": "Derni\u00e8re publication",
+        "home.recentResearch": "Recherche r\u00e9cente",
+        "home.viewAll": "Voir toutes les publications \u2192",
+
+        // Sidebar
+        "sidebar.role": "Ing\u00e9nieur de recherche en IA",
+        "sidebar.recentPubs": "Publications r\u00e9centes",
+        "sidebar.quickLinks": "Liens rapides",
+        "sidebar.allPubs": "Toutes les publications",
+        "sidebar.journalsConf": "Revues, Conf\u00e9rences & Ateliers",
+        "sidebar.aboutMe": "\u00c0 propos de moi",
+        "sidebar.bioEdu": "Bio, Formation & Exp\u00e9rience",
+        "sidebar.contact": "Contact",
+        "sidebar.getInTouch": "Me contacter",
+        "sidebar.backHome": "Retour \u00e0 l'accueil",
+
+        // Closed message
+        "closed.title": "Processus termin\u00e9.",
+        "closed.message": "hadriengayap.io a cess\u00e9 de fonctionner. Voulez-vous red\u00e9marrer ?",
+        "closed.restart": "Red\u00e9marrer",
 
         // About
         "about.title": "\u00c0 propos de moi",
         "about.lead": "Je suis ma\u00eetre et ing\u00e9nieur en informatique sp\u00e9cialis\u00e9 en intelligence artificielle et bio-informatique par la recherche. Autodidacte avec une forte autonomie de travail et une autodiscipline pour relever les d\u00e9fis majeurs.",
         "about.paragraph2": "J'ai d\u00e9velopp\u00e9 un leadership visionnaire au fil des ann\u00e9es, capable d'inspirer et de mobiliser des \u00e9quipes autour d'objectifs ambitieux. Cette capacit\u00e9 me permet d'anticiper les d\u00e9fis sociaux et technologiques, de proposer des solutions innovantes et de mener des projets complexes vers le succ\u00e8s tout en favorisant la collaboration et l'alignement des efforts.",
+        "about.skills.title": "Comp\u00e9tences & Expertise",
         "about.skills.languages": "Langues",
         "about.skills.lang.french": "Fran\u00e7ais (Langue maternelle)",
         "about.skills.lang.english": "Anglais (Courant)",
@@ -430,7 +466,6 @@ const translations = {
         "contact.location.label": "Localisation",
         "contact.location.value": "Moncton, Nouveau-Brunswick, Canada",
         "contact.email.label": "Courriel",
-        "contact.phone.label": "T\u00e9l\u00e9phone",
         "contact.form.title": "Envoyer un message",
         "contact.form.name": "Nom",
         "contact.form.email": "Courriel",
@@ -439,10 +474,9 @@ const translations = {
         "contact.form.submit": "Envoyer le message",
 
         // Footer
-        "footer.copyright": "\u00a9 2026 Hadrien Gayap. Tous droits r\u00e9serv\u00e9s.",
-        "footer.tagline": "Faire progresser l'IA m\u00e9dicale et la recherche sur la d\u00e9tection du cancer",
-        "footer.navTitle": "Navigation",
-        "footer.connectTitle": "Connexion"
+        "footer.copyright": "\u00a9 2026 Hadrien Gayap",
+        "footer.email": "Courriel",
+        "footer.message": "m'\u00e9crire \u2192"
     }
 };
 
@@ -451,7 +485,7 @@ const translations = {
 // ==========================================
 
 function t(key) {
-    const lang = document.documentElement.getAttribute('data-lang') || 'en';
+    var lang = document.documentElement.getAttribute('data-lang') || 'en';
     return translations[lang][key] || translations['en'][key] || key;
 }
 
@@ -462,13 +496,13 @@ function applyLanguage(lang) {
 
     // Update meta tags
     document.title = t('meta.title');
-    const metaDesc = document.querySelector('meta[name="description"]');
+    var metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', t('meta.description'));
 
     // Translate all data-i18n elements (textContent)
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
-        const key = el.getAttribute('data-i18n');
-        const val = translations[lang][key];
+        var key = el.getAttribute('data-i18n');
+        var val = translations[lang][key];
         if (val !== undefined) {
             el.textContent = val;
         }
@@ -476,25 +510,16 @@ function applyLanguage(lang) {
 
     // Translate placeholders
     document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
-        const key = el.getAttribute('data-i18n-placeholder');
-        const val = translations[lang][key];
+        var key = el.getAttribute('data-i18n-placeholder');
+        var val = translations[lang][key];
         if (val !== undefined) {
             el.placeholder = val;
         }
     });
 
-    // Translate aria-labels
-    document.querySelectorAll('[data-i18n-aria-label]').forEach(function(el) {
-        const key = el.getAttribute('data-i18n-aria-label');
-        const val = translations[lang][key];
-        if (val !== undefined) {
-            el.setAttribute('aria-label', val);
-        }
-    });
-
     // Re-render dynamic content (publications)
-    if (typeof filterPublications === 'function') {
-        filterPublications();
+    if (typeof window.filterPublications === 'function') {
+        window.filterPublications();
     }
 }
 
@@ -503,16 +528,16 @@ function applyLanguage(lang) {
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('lang-toggle');
+    var toggle = document.getElementById('lang-toggle');
     if (toggle) {
         toggle.addEventListener('click', function() {
-            const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
-            const newLang = currentLang === 'en' ? 'fr' : 'en';
+            var currentLang = document.documentElement.getAttribute('data-lang') || 'en';
+            var newLang = currentLang === 'en' ? 'fr' : 'en';
             applyLanguage(newLang);
         });
     }
 
     // Apply saved or detected language
-    const lang = document.documentElement.getAttribute('data-lang') || 'en';
+    var lang = document.documentElement.getAttribute('data-lang') || 'en';
     applyLanguage(lang);
 });
