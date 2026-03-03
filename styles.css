@@ -1,8 +1,6 @@
 /* ==========================================
    CSS VARIABLES - Retro macOS Blue Night Theme
    ========================================== */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 :root {
     /* Background */
     --bg-body: #0a0e1a;
@@ -71,10 +69,13 @@ html {
 }
 
 body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-family: var(--font-body);
+    color: #e6edf3;
     color: var(--text-primary);
+    background-color: #0a0e1a;
+    background: linear-gradient(180deg, #0a0e1a 0%, #1a1e2e 100%);
     background: linear-gradient(180deg, var(--bg-body) 0%, var(--bg-body-end) 100%);
-    background-attachment: fixed;
     min-height: 100vh;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -106,18 +107,22 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    WINDOW FRAME (macOS style)
    ========================================== */
 .window-frame {
+    max-width: 1200px;
     max-width: var(--max-width);
     margin: 2rem auto;
+    border-radius: 12px;
     border-radius: var(--window-radius);
+    background: #0d1117;
     background: var(--bg-window-alpha);
+    border: 1px solid rgba(0, 212, 255, 0.12);
     border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 255, 0.05);
     box-shadow: var(--shadow-window);
     overflow: hidden;
     position: relative;
     z-index: 1;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    transition: all var(--transition-base);
 }
 
 .window-frame.maximized {
@@ -138,6 +143,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* Title bar */
 .titlebar {
+    background: linear-gradient(180deg, #2d2d2d 0%, #1f1f1f 100%);
     background: var(--bg-titlebar);
     padding: 0.6rem 1rem;
     display: flex;
