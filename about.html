@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -94,7 +95,11 @@
 
                 <!-- Education -->
                 <div class="education-section">
-                    <h2 class="section-heading" data-i18n="about.education">Education</h2>
+                    <button class="about-section-toggle" aria-expanded="true" onclick="toggleSection(this)">
+                        <h2 class="section-heading" data-i18n="about.education">Education</h2>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="collapsible-content expanded">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
@@ -132,11 +137,16 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
 
                 <!-- Experience -->
                 <div class="experience-section">
-                    <h2 class="section-heading" data-i18n="exp.title">Professional Experience</h2>
+                    <button class="about-section-toggle" aria-expanded="false" onclick="toggleSection(this)">
+                        <h2 class="section-heading" data-i18n="exp.title">Professional Experience</h2>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="collapsible-content expanded">
 
                     <div class="exp-item">
                         <span class="exp-date" data-i18n="exp.0.date">February 2026 - Present</span>
@@ -208,11 +218,16 @@
                         </ul>
                         <div class="tech-tags"><span>EEG Analysis</span><span>Neural Networks</span></div>
                     </div>
+                    </div>
                 </div>
 
                 <!-- Leadership -->
                 <div class="featured-section">
-                    <h2 class="section-heading" data-i18n="leadership.title">Leadership & Community Engagement</h2>
+                    <button class="about-section-toggle" aria-expanded="false" onclick="toggleSection(this)">
+                        <h2 class="section-heading" data-i18n="leadership.title">Leadership & Community Engagement</h2>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="collapsible-content expanded">
                     <div class="leadership-grid">
                         <div class="leadership-card featured">
                             <div class="card-icon">&#127963;&#65039;</div>
@@ -300,11 +315,16 @@
                             </ul>
                         </div>
                     </div>
+                    </div>
                 </div>
 
                 <!-- Awards -->
                 <div class="featured-section">
-                    <h2 class="section-heading" data-i18n="awards.title">Awards & Recognition</h2>
+                    <button class="about-section-toggle" aria-expanded="false" onclick="toggleSection(this)">
+                        <h2 class="section-heading" data-i18n="awards.title">Awards & Recognition</h2>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="collapsible-content expanded">
                     <div class="awards-summary">
                         <div class="total-funding">
                             <span class="funding-amount">$28,750+</span>
@@ -373,6 +393,7 @@
                             <p class="award-org" data-i18n="awards.10.org">Ministry of Higher Education, Cameroon</p>
                             <p class="award-note" data-i18n="awards.10.note">App facilitating telecom operator services access</p>
                         </div>
+                    </div>
                     </div>
                 </div>
 

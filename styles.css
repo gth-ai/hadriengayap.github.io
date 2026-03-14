@@ -29,7 +29,7 @@
 
     /* Text */
     --text-primary: #e6edf3;
-    --text-secondary: #8b949e;
+    --text-secondary: #9da5ad;
     --text-dim: #484f58;
     --text-accent: var(--cyan);
 
@@ -1408,15 +1408,24 @@ html:not([data-lang]) .lang-en { display: inline; }
         grid-template-columns: 1fr;
     }
 
+    /* Move sidebar above main content on mobile */
+    .sidebar {
+        order: -1;
+        position: static;
+        max-height: none;
+        border-top: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem;
+    }
+
     .main-content {
         border-right: none;
         padding: 1.5rem;
     }
 
-    .sidebar {
-        position: static;
-        max-height: none;
-        border-top: 1px solid var(--border);
+    /* Hide non-essential sidebar sections on mobile, keep profile */
+    .sidebar .sidebar-section {
+        display: none;
     }
 
     .skills-grid {
@@ -1440,7 +1449,7 @@ html:not([data-lang]) .lang-en { display: inline; }
     }
 
     .research-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .research-controls {
@@ -1458,6 +1467,11 @@ html:not([data-lang]) .lang-en { display: inline; }
     .filters select {
         width: 100%;
     }
+
+    /* Collapsible sections on About page */
+    .about-section-toggle {
+        display: flex;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1468,10 +1482,16 @@ html:not([data-lang]) .lang-en { display: inline; }
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 212, 255, 0.08);
     }
 
+    /* Simplify window chrome on mobile - hide traffic lights */
+    .traffic-lights {
+        display: none;
+    }
+
     .titlebar {
         border-radius: 10px 10px 0 0;
         padding: 0.5rem 0.75rem;
-        min-height: 36px;
+        min-height: 32px;
+        justify-content: center;
     }
 
     .main-content {
@@ -1551,11 +1571,65 @@ html:not([data-lang]) .lang-en { display: inline; }
     }
 
     .sidebar {
-        border-radius: 0 0 10px 10px;
+        border-radius: 0;
     }
 
     .footer {
         border-radius: 0 0 10px 10px;
+    }
+}
+
+/* ==========================================
+   COLLAPSIBLE SECTIONS (About page mobile)
+   ========================================== */
+.about-section-toggle {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    gap: 0.5rem;
+}
+
+.about-section-toggle .section-heading {
+    margin-bottom: 0;
+    pointer-events: none;
+}
+
+.about-section-toggle .toggle-icon {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--cyan);
+    transition: transform var(--transition-base);
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.about-section-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.collapsible-content {
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    .about-section-toggle[aria-expanded="false"] + .collapsible-content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+
+    .about-section-toggle[aria-expanded="true"] + .collapsible-content {
+        opacity: 1;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
     }
 }
 

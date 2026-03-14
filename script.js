@@ -591,6 +591,14 @@ function renderPubCard(pub) {
 })();
 
 // ==========================================
+// COLLAPSIBLE SECTIONS (About page mobile)
+// ==========================================
+function toggleSection(btn) {
+    var isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isExpanded));
+}
+
+// ==========================================
 // CONSOLE EASTER EGG
 // ==========================================
 console.log('%c> hadriengayap.io', 'font-family: monospace; font-size: 16px; font-weight: bold; color: #00d4ff;');
