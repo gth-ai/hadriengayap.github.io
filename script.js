@@ -11,7 +11,7 @@ const publications = [
         title: 'MGDB: A Novel Bioinformatics Quality Control Tool for Clinical Next-Generation Sequencing',
         authors: ['Gayap, Hadrien T.', 'Robichaud, Philippe-Pierre', 'Crapoulet, Nicolas', 'Allain, Eric P.'],
         venue: 'Cancer Informatics, 25, 11769351251411074. SAGE Publications',
-        link: null
+        link: 'https://pubmed.ncbi.nlm.nih.gov/41492654/'
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const publications = [
         title: 'SALM: A Unified Model for 2D and 3D Region of Interest Segmentation in Lung CT Scans Using Vision Transformers',
         authors: ['Gayap, Hadrien T.', 'Moulay A. Akhloufi'],
         venue: 'Applied Bio sciences. MDPI',
-        link: null
+        link: 'https://doi.org/10.3390/applbiosci4010011'
     },
     {
         id: 3,
@@ -31,7 +31,7 @@ const publications = [
         title: 'Lung-Mamba: Lung nodule segmentation model optimized by Mamba\'s selective state spaces',
         authors: ['Gayap, Hadrien T.', 'Akhloufi, Moulay A.'],
         venue: 'Biomedical Engineering Advances, 100214. Elsevier',
-        link: null
+        link: 'https://www.sciencedirect.com/science/article/pii/S2667099226000095'
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const publications = [
         title: 'Deep Machine Learning for Medical Diagnosis, Application to Lung Cancer Detection: A Review',
         authors: ['Gayap, Hadrien T.', 'Moulay A. Akhloufi'],
         venue: 'BioMedInformatics 4.1 (2024): 236-284',
-        link: null
+        link: 'https://doi.org/10.3390/biomedinformatics4010015'
     },
     {
         id: 5,
@@ -163,7 +163,8 @@ const publications = [
         title: 'L\'intelligence artificielle en santé : présentation des travaux de recherche',
         authors: ['Gayap, H.'],
         venue: 'École Nationale Supérieure Polytechnique de Yaoundé, Cameroun',
-        date: 'December 16, 2025'
+        date: 'December 16, 2025',
+        link: 'https://www.linkedin.com/posts/hadriengayap_intelligenceartificielle-santaez-deeplearning-activity-7424490871380922368-qQBp'
     },
     {
         id: 28,
@@ -173,7 +174,8 @@ const publications = [
         title: 'État de l\'art de l\'intelligence artificielle dans le domaine militaire',
         authors: ['Gayap, H.'],
         venue: 'Corps du Bataillon d\'Intervention Rapide (BIR), HELIOS, Cameroun',
-        date: 'January 7, 2026'
+        date: 'January 7, 2026',
+        link: 'https://www.linkedin.com/posts/hadriengayap_cameroun-bir-ia-activity-7415101184639844352-0zZG'
     },
 
     // Workshops
